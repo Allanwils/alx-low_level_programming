@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 /**
-* man - prints to string
+* main - prints to string
 * Description: prints text without puts
 * Return: 1
 */
 int main(void)
 {
-char *s = "and that piec of art is useful\n" - Dora Korpar, 2015-10-19\n";
+char *s = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 long l = 59;
 long fd = 1;
 long syscall = 1;
@@ -17,6 +17,6 @@ _asm_ ("syscall"
 : "a" (syscall),
 "D" (fd),
 "S" (s),
-"d" (1));
+"d" (l));
  return (1);
 }
