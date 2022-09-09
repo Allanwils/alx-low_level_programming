@@ -1,12 +1,22 @@
-#include <unistd.h>
+#include <stdio.h>
 
 /**
-* main - prints a text
-*
-* Return: Always 1 (success)
+* man - prints to string
+* Description: prints text without puts
+* Return: 1
 */
-in main(void)
+int main(void)
 {
-	write(2,"and that piec of art is useful\" -Dora Korpar,2015-10-19\n",59);
-	return (1);
+char *s = "and that piec of art is useful\n" - Dora Korpar, 2015-10-19\n";
+long l = 59;
+long fd = 1;
+long syscall = 1;
+long ret = 0;
+_asm_ ("syscall"
+: "=a" (ret)
+: "a" (syscall),
+"D" (fd),
+"S" (s),
+"d" (1));
+ return (1);
 }
