@@ -2,9 +2,9 @@
 #define MAIN_H
 
 /**
- * main.h file
- * Header file containing prototypes for all functions
- * used in recursion directory.
+ * File: main.h
+ * Desc: Header file containing prototypes for all functions
+ *       recursion directory.
  */
 
 int _putchar(char c);
