@@ -1,13 +1,12 @@
 #include "search_algos.h"
 
-
 /**
-  * JUMP_SEARCH-Searches for value(s) in sorted array of integers.
-  * @ARRAY:    A pointer to the first element of the array to search.
-  * @VALUE:    The value to search for.
-  * @SIZE:     The number of elements in the array
-  * RETURN:    If the value isn't there or array is NULL, -1. Otherwise,first index where the value is located
-  * DESCRIPTION: Prints a value each time it is compared.
+  * jump_search - jump searches.
+  * @array: points to first element of the array to search.
+  * @size: The size of the array.
+  * @value: The value to search for.
+  *
+  * Return: NULL, -1, the first index where the value is located.
   */
 
 int jump_search(int *array, size_t size, int value)
@@ -25,9 +24,11 @@ int jump_search(int *array, size_t size, int value)
 		jump += step;
 	}
 
-	printf("Value got between indexes [%ld] and [%ld]\n", i, jump);
+	printf("Value found between indexes [%ld] and [%ld]\n", i, jump);
 
-	jump = jump < size - 1 ? jump : size - 1;
+	if (jump >= size)
+		jump = size - 1;
+
 	for (; i < jump && array[i] < value; i++)
 		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 	printf("Value checked array[%ld] = [%d]\n", i, array[i]);
