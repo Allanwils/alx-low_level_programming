@@ -1,36 +1,48 @@
 #include "search_algos.h"
 
 /**
-  * BINARY_SEARCH - Does search for a value(s) in sorted array of integers.
-  * @SIZE: number of elements array.
-  * @VALUE: The value to search for.
-  * @ARRAY: Points to first element of the array.
-  * RETURN: If value is missing or array is NULL, -1. Otherwise,index where value is located.
-  * DESCRIPTION: Prints array being searched after every change.
+  * binary_search - Does binary search
+  * @array: points to first element.
+  * @size: size of array
+  * @value: value to find
+  *
+  * Return: index where found or -1
   */
-
 int binary_search(int *array, size_t size, int value)
 {
-	size_t i, left, right;
+	int  left, right, pivot;
 
 	if (array == NULL)
 		return (-1);
-
-	for (left = 0, right = size - 1; right >= left;)
+	left = 0;
+	right = size - 1;
+	while (left <= right)
 	{
-		printf("Searching in array: ");
-		for (i = left; i < right; i++)
-			printf("%d, ", array[i]);
-		printf("%d\n", array[i]);
-
-		i = left + (right - left) / 2;
-		if (array[i] == value)
-			return (i);
-		if (array[i] > value)
-			right = i - 1;
+		print_array(array, left, right);
+		pivot = (left + right) / 2;
+		if (array[pivot] > value)
+			right = pivot - 1;
+		else if (array[pivot] < value)
+			left = pivot + 1;
 		else
-			left = i + 1;
+			return (pivot);
 	}
-
 	return (-1);
+}
+
+/**
+  * print_array - print array
+  * @array: array
+  * @left: starting print
+  * @right: ending print
+  */
+
+void print_array(int *array, int left, int right)
+{
+	int i;
+
+	printf("Searching in array: ");
+	for (i = left; i < right; i++)
+		printf("%d, ", array[i]);
+	printf("%d\n", array[i]);
 }
