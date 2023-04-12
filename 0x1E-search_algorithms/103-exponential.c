@@ -1,14 +1,14 @@
 #include "search_algos.h"
 
 /**
-  * _BINARY_SEARCH - Uses binary to search.
-  * @ARRAY:  Points to the first element of the array.
-  * @LEFT:   Starting index
-  * @RIGHT:  Ending index
-  * @VALUE:  Value to search for.
-  * RETURN: NULL, -1, otherwwise the index where the value is located.
+  * _binary_search - for binary searches.
+  * @array: A pointer to  first element of the array.
+  * @left: starting inde
+  * @right: ending index
+  * @value: value to search for.
+  *
+  * Return: NULL, -1, otherwise the index where the value is located.
   */
-
 int _binary_search(int *array, size_t left, size_t right, int value)
 {
 	size_t i;
@@ -36,14 +36,13 @@ int _binary_search(int *array, size_t left, size_t right, int value)
 }
 
 /**
-*  EXPONENTIAL_SEARCH -Uses exponential search.
-  * @ARRAY:Points to first element of the array.
-  * @SIZE: Size of array.
-  * @SIZE: Value to search for.
+* exponential_search - searches using exponential search method.
+  * @array: A pointer to  first element of the array.
+  * @size:  The size of the array.
+  * @value: The value to search for.
   *
-  * RETURN: NULL, -1, otherwise index where the value is located.
+  * Return: NULL, -1, otherwise  index where the value is located.
   */
-
 int exponential_search(int *array, size_t size, int value)
 {
 	size_t i = 0, right;
